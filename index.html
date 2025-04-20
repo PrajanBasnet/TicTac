@@ -10,21 +10,22 @@
 <body>
 
     <dialog>
-        <form method="dialog">
+        <form method="dialog" >
             <div>
-
-                <label for="player">playerOne:</label>
-                <input type="text" name="player" placeholder="name"><br>
+                <label for="player">playerX:</label>
+                <input type="text" name="player" placeholder="name" value="X" id="p1"><br>
             </div>
-            <label for="player">playerTwo:</label>
-            <input type="text" name="player" placeholder="O"><br>
-            <button class="submit">ADD</button>
+            <label for="player">playerO:</label>
+            <input type="text" name="player" placeholder="O" value="O" id="p2"><br>
+            <button class="submit" onclick="playerToggle()">ADD</button>
         </form>
     </dialog>
 
     <div class="title">
         TicTacToe
     </div>
+    <p id="short"></p>
+
     <div class="container">
         <div class="cell" mydata="0" cellNum="0"></div>
         <div class="cell" mydata="0" cellNum="1"></div>
@@ -37,6 +38,7 @@
         <div class="cell" mydata="2" cellNum="2"></div>
 
     </div><br><br>
+    <p id="message"></p>
 <div class="btns">
     <button id="btn">Add Players Name</button>
     <button id="btn">Reset</button>

@@ -1,5 +1,10 @@
 let cell = document.querySelectorAll(".cell");
-console.log(cell[2].mydata)
+let msg = document.getElementById("message");
+let playerOne = document.getElementById("p1");
+let playerTwo = document.getElementById("p2");
+
+const short = document.getElementById("short");
+console.log(playerOne.value)
 const gameBoard = {
     board: [
         [0, 0, 0],
@@ -43,9 +48,11 @@ function checkwin() {
         const [a, b, c] = w;
         for (let k = 0; k < 3; k++) {
             if (gameBoard.board[k][a] === "X" && gameBoard.board[k][b] === "X" && gameBoard.board[k][c] === "X") {
+                msg.innerHTML = "X";
                 console.log("X wins");
             }
             else if (gameBoard.board[k][a] === "O" && gameBoard.board[k][b] === "O" && gameBoard.board[k][c] === "O") {
+                msg.innerHTML = "Draw";
                 console.log("O wins");
             }
       
@@ -53,10 +60,12 @@ function checkwin() {
 
         for (let j = 0; j < 3; j++) {
             if (gameBoard.board[0][j] === "X" && gameBoard.board[1][j] === "X" && gameBoard.board[2][j] === "X") {
+                msg.innerHTML = "Draw";
                 console.log("X wins");
             }
           
             if (gameBoard.board[0][j] === "O" && gameBoard.board[1][j] === "O" && gameBoard.board[2][j] === "O") {
+                msg.innerHTML = "Draw";
                 console.log("O Wins");
             }
       
@@ -76,16 +85,21 @@ function draw(){
     dw += 1;
     if(dw == 9){
         console.log("Draw ");
+        msg.innerHTML = "Draw";
     }
     return
 }
 
+function playerToggle(){
+    console.log(playerOne.value);
+
+}
 function screenControl() {
     for (let i = 0; i < cell.length; i++) {
         cell[i].addEventListener("click", (e) => {
             if ((turn == false) && cell[i].innerHTML != "X") {
                 turn = true;
-                cell[i].innerHTML = "X";
+                short.innerHTML = `Turn: ${playerOne.value} `;                cell[i].innerHTML = "X";
                 gamelogic(cell[i].getAttribute("mydata"), cell[i].getAttribute("cellNum"), player.X).newplayer();
                 console.log(gameBoard.board)
                 draw()
@@ -94,6 +108,8 @@ function screenControl() {
             else if ((turn == true) && (cell[i].innerHTML != "O")) {
                 turn = false;
                 cell[i].innerHTML = "O";
+                short.innerHTML = `Turn: ${playerTwo.value} `;
+
                 gamelogic(cell[i].getAttribute("mydata"), cell[i].getAttribute("cellNum"), player.O).newplayer();
                 console.log(gameBoard.board)
                 draw()

@@ -56,3 +56,15 @@ button{
     width: 100px;
     height: 69px;
 }
+#message{
+    color: #4caf50;
+    font-size: 30px;
+    position: relative;
+    left:35%;
+}
+#short{
+    color: #4caf50;
+    font-size: 18px;
+    position: relative;
+    left:43%;
+}
