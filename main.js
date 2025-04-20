@@ -74,3 +74,27 @@ gamelogic(2, 1, player.O).newplayer();
 gamelogic(2, 0, player.O).newplayer();
 console.log(gameBoard.board)
 test();
+
+
+let box = document.querySelectorAll(".item");
+let turn = true;
+console.log(box)
+function DomLogic(){
+    for (let k = 0; k < box.length; k++) {
+        box[k].addEventListener("click",(e)=>{
+            if(turn === true){
+                box[k].innerHTML = "X"
+                gamelogic(0, 2, player.X).newplayer();
+                
+                turn = false;
+            }else{
+                box[k].innerHTML = "O"
+
+                turn = true;
+            } 
+        })
+        
+    }
+    
+}
+DomLogic();
