@@ -7,20 +7,41 @@
     <link rel="stylesheet" href="style.css">
     <title>Tic Tac Toe</title>
 </head>
-
 <body>
-    <div class="container">
-        <div class="cell" mydata="0"></div>
-        <div class="cell" mydata="0"></div>
-        <div class="cell" mydata="0"></div>
-        <div class="cell" mydata="1"></div>
-        <div class="cell" mydata="1"></div>
-        <div class="cell" mydata="1"></div>
-        <div class="cell" mydata="2"></div>
-        <div class="cell" mydata="2"></div>
-        <div class="cell" mydata="2"></div>
 
+    <dialog>
+        <form method="dialog">
+            <div>
+
+                <label for="player">playerOne:</label>
+                <input type="text" name="player" placeholder="name"><br>
+            </div>
+            <label for="player">playerTwo:</label>
+            <input type="text" name="player" placeholder="O"><br>
+            <button class="submit">ADD</button>
+        </form>
+    </dialog>
+
+    <div class="title">
+        TicTacToe
     </div>
+    <div class="container">
+        <div class="cell" mydata="0" cellNum="0"></div>
+        <div class="cell" mydata="0" cellNum="1"></div>
+        <div class="cell" mydata="0" cellNum="2"></div>
+        <div class="cell" mydata="1" cellNum="0"></div>
+        <div class="cell" mydata="1" cellNum="1"></div>
+        <div class="cell" mydata="1" cellNum="2"></div>
+        <div class="cell" mydata="2" cellNum="0"></div>
+        <div class="cell" mydata="2" cellNum="1"></div>
+        <div class="cell" mydata="2" cellNum="2"></div>
+
+    </div><br><br>
+<div class="btns">
+    <button id="btn">Add Players Name</button>
+    <button id="btn">Reset</button>
+
+</div>
     <script src="script.js"></script>
 
 </body>
