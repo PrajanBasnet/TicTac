@@ -4,7 +4,6 @@ let playerOne = document.getElementById("p1");
 let playerTwo = document.getElementById("p2");
 
 const short = document.getElementById("short");
-console.log(playerOne.value)
 const gameBoard = {
     board: [
         [0, 0, 0],
@@ -87,7 +86,6 @@ function checkwin() {
             msg.innerHTML = `Winner: ${playerOne.value} `;
             refresh()
 
-
         }
         if (gameBoard.board[2][a] === "O" && gameBoard.board[1][b] === "O" && gameBoard.board[0][c] === "O") {
             msg.innerHTML = `Winner: ${playerTwo.value} `;
@@ -98,7 +96,6 @@ function checkwin() {
     const draw = () => 
         dw += 1;
         if (dw == 9) {
-            console.log("Draw ");
             msg.innerHTML = "Draw";
         }
         
@@ -144,6 +141,7 @@ function domManipulation(){
 
 screenControl();
 domManipulation();
+
 function refresh (){
     setInterval(() => {
         location.reload(); 
